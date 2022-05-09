@@ -1,0 +1,21 @@
+plugins {
+    id 'application'
+
+    id "com.avast.gradle.docker-compose" version "0.16.3"
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'directory-structure-common-conventions'
+}
+
+dockerCompose {
+    useComposeFiles = ['docker-compose.yml']
+    waitForTcpPorts = true
+    projectName = project.name
+}
