@@ -1,0 +1,3 @@
+rootProject.name = 'apache-kafka-sample-v2'
+include "kafka-producer-service"
+include "kafka-consumer-service"

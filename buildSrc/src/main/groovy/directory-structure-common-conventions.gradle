@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+task generateDir {
+    sourceSets*.java.srcDirs*.each { it.exists() ? println("already exists dir ${it}") : it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.exists() ? println("already exists dir ${it}") : it.mkdirs() }
+}
+
+// sourceSets {
+//     main {
+//         output.dir(generateResourcesTask)
+//         java {
+//             compileClasspath += main.output + test.output
+//             runtimeClasspath += main.output + test.output
+//             srcDir 'src/main/java'
+//         }
+//         resources {
+//             srcDir 'src/main/resources'
+//         }
+//     }
+//     test {
+//         java {
+//             srcDir 'src/test/java'
+//         }
+//     }
+//     integrationTest {
+//         java {
+//             srcDir 'src/integration-test/java'
+//         }
+//         resources {
+//             srcDir 'src/integration-test/resources'
+//         }
+//     }
+// }
+
+// configurations {
+//     componentTestCompile.extendsFrom testCompile
+//     componentTestRuntime.extendsFrom testRuntime
+// }
+
+// buildDir = 'build'
+
+// abstract class GenerateResourcesTask extends DefaultTask {
+//     @OutputDirectory
+//     abstract DirectoryProperty getResourcesDir()
+
+//     @TaskAction
+//     def generateResources() {
+//         def generated = resourcesDir.file("myGeneratedResource.properties").get().asFile
+//         generated.text = "message=Stay happy!"
+//     }
+// }

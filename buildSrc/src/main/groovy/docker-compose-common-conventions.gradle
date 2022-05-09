@@ -1,0 +1,13 @@
+// plugins {
+//     id "com.avast.gradle.docker-compose"
+// }
+
+// repositories {
+//     mavenCentral()
+// }
+
+// dockerCompose {
+//     useComposeFiles = ['docker-compose.yml']
+//     waitForTcpPorts = true
+//     projectName = project.name
+// }

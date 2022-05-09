@@ -1,0 +1,5 @@
+plugins {
+    id 'java-common-conventions'
+    id 'kafka-common-conventions'
+    id 'directory-structure-common-conventions'
+}
